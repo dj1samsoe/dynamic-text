@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #171b20;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper .teks-diam {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.wrapper .teks-berjalan {
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+
+.wrapper .teks-berjalan li {
+  list-style: none;
+  color: #e74c3c;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+
+.teks-berjalan li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+
+.teks-berjalan li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #171b20;
+  border-left: 2px solid #e74c3c;
+  animation: typing 3s steps(15) infinite;
+}
+
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 80%;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 70%;
+  }
+}
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 60%;
+  }
+
+  .wrapper {
+    flex-wrap: wrap;
+  }
+}
